@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-
 const Header = (props) => {
   return (
     <header>
@@ -20,7 +19,6 @@ const FilterPanel = (props) => {
     </div>
   )
 }
-
 
 const List = (props) => {
   return (
@@ -55,9 +53,9 @@ class App extends Component {
     super();
     this.state = {
       items: [
-        { text: "Don't be Len Bias", completed: true },
-        { text: "Try new things", completed: false },
-        { text: "Practice basketball", completed: false }
+        { text: "Learn React", completed: true },
+        { text: "Build a todo app", completed: false },
+        { text: "Profit!", completed: false }
       ],
       filter: 'all',
       newTodoText: ''
