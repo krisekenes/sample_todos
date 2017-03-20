@@ -60,27 +60,23 @@ class App extends Component {
             filter: "all",
             newTodoText: "",
         };
-        this.handleFilter =  this.handleFilter.bind( this );
-        this.onChange =  this.onChange.bind( this );
-        this.createTodo = this.createTodo.bind( this );
-        this.deleteTodo = this.deleteTodo.bind( this );
     }
-    handleFilter(e) {
+    handleFilter = (e) => {
         this.setState({filter: e.target.value,});
     }
-    onChange(e){
+    onChange = (e) => {
         let items = this.state.items;
         items[e.target.value].completed = !this.state.items[e.target.value].completed;
         this.setState({ items: items, });
     }
-    createTodo(e, text){
+    createTodo = (e, text) => {
         e.preventDefault();
         let items = this.state.items;
         let id = items.length ? items[items.length-1].id : 0;
         items.push({ id:id+1 , text:text, completed:false, });
         this.setState({ items: items, });
     }
-    deleteTodo(e, id){
+    deleteTodo = (e, id) => {
         let items = this.state.items;
         items = items.filter(item => item.id !== id); 
         this.setState({ items: items, });
